@@ -5,6 +5,9 @@
  */
 package herencia;
 
+import java.util.ArrayList;
+import java.util.Date;
+
 /**
  *
  * @author Ruben
@@ -15,7 +18,7 @@ public class Serie extends Film{
     public int cantidadTemporadas;
     public int capitulos;
 
-    public Serie(String titulo, String creador, String genero, int duracion, short año, boolean visto) {
+    public Serie(String titulo, String creador, String genero, int duracion, int año, boolean visto) {
         super(titulo, creador, genero,duracion, año, visto);
     }
 
@@ -26,14 +29,6 @@ public class Serie extends Film{
                 "\n Año "+ getAño()+
                 "\n Duracion"+getDuaracion()+
                 "\n Capitulos"+getCapitulos();
-    }
-    
-    public void mostrarDatoSerie(){
-        System.out.println("Titulo: "+titulo);
-        System.out.println("Genero: "+genero);
-        System.out.println("Duracion: "+duracion);
-        System.out.println("Capitulos: "+capitulos);
-        System.out.println("Año: "+año);
     }
 
     public int getId() {
@@ -66,6 +61,12 @@ public class Serie extends Film{
 
     public void setCapitulos(int capitulos) {
         this.capitulos = capitulos;
+    }
+    public static ArrayList<Serie> listaSerie(){
+        ArrayList<Serie> Series = new ArrayList<>();
+        Serie lista = new Serie("titulo", "creador", "genero", 12, 2001, false);
+        Series.add(lista);
+        return Series;
     }
     
 }

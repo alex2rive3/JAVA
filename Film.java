@@ -9,22 +9,22 @@ package herencia;
  *
  * @author Ruben
  */
-public class Film {
-    public String titulo;
-    public String creador;
-    public String genero;
-    public int duracion;
-    public short año;
-    public boolean visto;    
-
-    public Film(String titulo, String creador, String genero, int duaracion, short año, boolean visto) {
+public abstract class Film {
+    private String titulo;
+    private String genero;
+    private String creador;
+    private int duracion;
+    private int año;
+    private boolean visto;
+        
+    public Film (){
+    }    
+    public Film(String titulo, String genero, String creador, int duracion) {
         super();
         this.titulo = titulo;
-        this.creador = creador;
         this.genero = genero;
-        this.duracion = duaracion;
-        this.año = año;
-        this.visto = visto;
+        this.creador = creador;
+        this.duracion = duracion;
     }
 
     public String getTitulo() {
@@ -35,14 +35,6 @@ public class Film {
         this.titulo = titulo;
     }
 
-    public String getCreador() {
-        return creador;
-    }
-
-    public void setCreador(String creador) {
-        this.creador = creador;
-    }
-
     public String getGenero() {
         return genero;
     }
@@ -51,22 +43,32 @@ public class Film {
         this.genero = genero;
     }
 
-    public int getDuaracion() {
+    public String getCreador() {
+        return creador;
+    }
+
+    public void setCreador(String creador) {
+        this.creador = creador;
+    }
+
+    public int getDuracion() {
         return duracion;
     }
 
-    public void setDuaracion(int duaracion) {
-        this.duracion = duaracion;
+    public void setDuracion(int duracion) {
+        this.duracion = duracion;
     }
 
-    public short getAño() {
+    public int getAño() {
         return año;
     }
 
-    public void setAño(short año) {
+    public void setAño(int año) {
         this.año = año;
     }
-
+    public String yaVisto(){
+        return visto ? "Si" : "No";
+    }
     public boolean isVisto() {
         return visto;
     }
@@ -74,4 +76,5 @@ public class Film {
     public void setVisto(boolean visto) {
         this.visto = visto;
     }
+    public abstract void view();
 }

@@ -18,12 +18,8 @@ public class Libro extends Publicacion{
     public boolean leido;
     public float tiempoLectura;
 
-    public Libro(int id, String isdn, boolean leido, float tiempoLectura, String titulo, Date fechaEdicion, String editorial) {
+    public Libro(String titulo, Date fechaEdicion, String editorial) {
         super(titulo, fechaEdicion, editorial);
-        this.id = id;
-        this.isdn = isdn;
-        this.leido = leido;
-        this.tiempoLectura = tiempoLectura;
     }
 
     public int getId() {
@@ -61,18 +57,14 @@ public class Libro extends Publicacion{
     @Override
     public String toString() {
         return "Libro: "+getTitulo() +
-                "\n Editorial" + getEditorial()+
-                "\n Fecha de Edicion"+getFechaEdicion()+
-                "\n Id"+id+
-                "\n isdn "+ isdn+
-                "\n Leido"+leido+
-                "\n Tiempo Liedo"+ tiempoLectura;
+                "\n Editorial: " + getEditorial()+
+                "\n Fecha de Edicion: "+getFechaEdicion();
     }
 
-    public static ArrayList<String> ListaLibros(){
-        ArrayList<String> libros = new ArrayList<>();
-        libros.add("1"+"el principito"+"el mundo"+"30/02/1997"+"13216546848"+true+35);
-        libros.add("4"+"la ciudad de papel"+"no recuerdo"+"07/12/2010"+"9876515445"+true+35);
+    public static ArrayList<Libro> listaLibro(){
+        ArrayList<Libro> libros = new ArrayList<>();
+        Libro lista = new Libro("Titulo", new Date(), "Editorial");
+        libros.add(lista);
         return libros;
     }
 
